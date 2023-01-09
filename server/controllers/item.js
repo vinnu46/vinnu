@@ -25,5 +25,19 @@ const getItems =  (req, res) => {
     .then(result => {res.json(result)})
     .catch(err => res.status(400))
 };
-
-module.exports={getItems};
+const getItem =  (req, res) => {
+    Item.findOne({
+    where: { id : req.params.itemID
+        }
+    }
+    )
+    .then(result => {
+        if (result){
+        res.json(result)
+    }else{
+        res.status(404).send()
+    }
+    })
+    .catch(err => res.status(400))
+};
+module.exports={getItems,getItem};
