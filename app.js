@@ -7,7 +7,7 @@ const cartRoutes = require('./routes/cart');
 const itemRoutes = require('./routes/item');
 const purchaseRoutes = require('./routes/purchase');
 const promotionCode = require('./routes/promotion-code');
-const sequelizeSync=require('./models/models')
+const {sequelizeSync}=require('./models/models')
 sequelizeSync({ alter: true })
 const app = express();
 app.use(express.urlencoded());
