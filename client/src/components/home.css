@@ -1,0 +1,30 @@
+.products {
+    text-align: center;
+    display:flex ; 
+    flex-wrap: wrap;
+    margin-left: 25px;
+}
+
+.product {
+    margin: 10px 0px;
+    flex:auto; 
+}
+.product-card{
+    cursor: pointer;
+    padding: 5px;
+}
+.product-card:hover{
+    scale: 1.01;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,0.1);
+}
+.btn {
+    margin: 5px;
+}
+.search{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}

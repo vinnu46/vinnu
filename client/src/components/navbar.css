@@ -1,0 +1,11 @@
+.search-navbar{
+display: flex;
+}
+.brand-name{
+    font-weight: 600;
+
+}
+.brand-name:hover{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
