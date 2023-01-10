@@ -206,8 +206,7 @@ const Purchase = sequelize.define('purchases', {
     });
     Item.hasMany(Cart)
     Cart.belongsTo(Item)
-
-sequelize.sync()
+    const sequelizeSync=sequelize.sync
     module.exports ={
-    Item, User, Cart, Purchase, PromotionCode, PurchaseItem
+    Item, User, Cart, Purchase, PromotionCode, PurchaseItem,sequelizeSync
     }
