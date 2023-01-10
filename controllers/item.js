@@ -23,7 +23,10 @@ const getItems =  (req, res) => {
     }
     })
     .then(result => {res.json(result)})
-    .catch(err => res.status(400))
+    .catch(err => {
+        console.log(err)
+        res.status(400).json({success:false,msg:'error'})
+    })
 };
 const getItem =  (req, res) => {
     Item.findOne({
