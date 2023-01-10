@@ -13,12 +13,11 @@ const postPurchase = async (req, res) => {
     let totalAfterPromotion = null
     if (req.body.promotionCodeID){
         promotionCode = await PromotionCode.findOne({
-            where: { id: req.body.promotionCode},
+            where: { id: req.body.promotionCodeID},
         })
         if (promotionCode && promotionCode.minimumPaymentLimit <= totalBeforePromotion ){
-            totalDiscountAmount =  totalBeforePromotion * promotionCode.percentageDiscountAmount + promotionCode.rawDiscountAmount <= promotionCode.maximumDiscountLimit  
-                                    ? totalBeforePromotion * promotionCode.percentageDiscountAmount + promotionCode.rawDiscountAmount  : promotionCode.maximumDiscountLimit
-        totalAfterPromotion = totalBeforePromotion - totalDiscountAmount
+            totalDiscountAmount = ((totalBeforePromotion * (promotionCode.percentageDiscountAmount/100)) + promotionCode.rawDiscountAmount) <= promotionCode.maximumDiscountLimit   ? ((totalBeforePromotion * (promotionCode.percentageDiscountAmount/100)) + promotionCode.rawDiscountAmount) : promotionCode.maximumDiscountLimit
+            totalAfterPromotion = totalBeforePromotion - totalDiscountAmount
         }
     }
     if (!totalAfterPromotion) {
@@ -47,6 +46,25 @@ const postPurchase = async (req, res) => {
         res.status(500).send()
     }
 };
+const getPurchase = async (req, res) => {
+    const user = await User.findOne({
+        where: {
+        username: req.username
+        }
+    })
+    Purchase.findAll({
+        where: { userID : user.id
+            }
+        }
+        )
+        .then(result => {
+            if (result){
+            res.json(result)
+        }else{
+            res.status(404).send()
+        }
+        })
+        .catch(err => res.status(400))
+}
 
-
-module.exports={postPurchase}
+module.exports={postPurchase,getPurchase}
