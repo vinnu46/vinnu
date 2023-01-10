@@ -1,0 +1,33 @@
+
+
+.form{
+    border: 2px solid  #ccdbe6;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding : 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction : column;
+
+}
+
+.form-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 10%; */
+}
+
+.redirect{
+    background-color: red;
+    outline-color: red;
+    border-color: red;
+}
+.web-header{
+    margin-top: 50px;
+    color:red;
+    font-size: 5rem;
+    margin-bottom:-50px ;
+
+}
