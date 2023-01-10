@@ -171,6 +171,9 @@ const Purchase = sequelize.define('purchases', {
             allowNull: false,
             },
     },
+    {
+        timestamps: false
+    }
 );
 
     const PurchaseItem = sequelize.define('PurchaseItems', {
