@@ -49,8 +49,8 @@ const Orders = () => {
                                 <tr>
                                     <td>{order.id}</td>
                                     <td>Confirming...</td>
-                                    <td>{order.totalBeforePromotion.toFixed(2)}</td>
-                                    <td>{order.totalAfterPromotion.toFixed(2)}</td>
+                                    <td>{Number(order.totalBeforePromotion).toFixed(2)}</td>
+                                    <td>{Number(order.totalAfterPromotion).toFixed(2)}</td>
                                     <td>Not delivered</td>
 
                                 </tr>
