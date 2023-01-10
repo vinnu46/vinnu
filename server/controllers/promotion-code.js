@@ -9,7 +9,7 @@ const postCheckPromotionCode =  (req, res) => {
     })
     .then(result => {
       if (result){
-      res.json({PromotionCodeId: result.id})
+      res.json(result)
     }
     else{
       res.status(404).send()
