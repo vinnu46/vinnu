@@ -171,6 +171,9 @@ const Purchase = sequelize.define('purchases', {
             allowNull: false,
             },
     },
+    {
+        timestamps: false
+    }
 );
 
     const PurchaseItem = sequelize.define('PurchaseItems', {
@@ -206,8 +209,7 @@ const Purchase = sequelize.define('purchases', {
     });
     Item.hasMany(Cart)
     Cart.belongsTo(Item)
-
-sequelize.sync()
+    // sequelize.sync()
     module.exports ={
     Item, User, Cart, Purchase, PromotionCode, PurchaseItem
     }

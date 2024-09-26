@@ -1,0 +1,30 @@
+{
+  "name": "toy-shop",
+  "version": "1.0.0",
+  "description": "An e-commerce website build with: Node.js, React.js, MySQL",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^2.3.3",
+    "sequelizer": "^1.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohamedElsayed-22/toy-shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohamedElsayed-22/toy-shop/issues"
+  },
+  "homepage": "https://github.com/MohamedElsayed-22/toy-shop#readme"
+}
